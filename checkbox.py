@@ -32,6 +32,9 @@ class Window(QtGui.QMainWindow):
         self.toolBar = self.addToolBar("extraction")
         self.toolBar.addAction(extractAction)
 
+        """
+        begenning here
+        """
         chekbox=QtGui.QCheckBox('Enlarge Window',self)
         chekbox.move(0,25)
         #chekbox.toggle()  #chekbox is on from the beginning
@@ -45,6 +48,11 @@ class Window(QtGui.QMainWindow):
             self.setGeometry(50,50,1000,600)
         else:
             self.setGeometry(50,50,500,300)
+
+
+    """
+    finish
+    """
     def close_application(self):
         choice=QtGui.QMessageBox.question(self,'Tile of the window', 'do u really wanna leave ?', QtGui.QMessageBox.Yes | QtGui.QMessageBox.No)
         if choice ==QtGui.QMessageBox.Yes:
