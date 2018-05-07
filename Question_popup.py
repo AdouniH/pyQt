@@ -35,12 +35,18 @@ class Window(QtGui.QMainWindow):
         self.show()
 
     def close_application(self):
+        """
+         here is the thiny
+        """
         choice=QtGui.QMessageBox.question(self,'Tile of the window', 'do u really wanna leave ?', QtGui.QMessageBox.Yes | QtGui.QMessageBox.No)
         if choice ==QtGui.QMessageBox.Yes:
             print('bye :p') #of course this is in the console
             sys.exit()
         else:
             pass
+        """
+        thingy finished
+        """
 def run():
     app = QtGui.QApplication(sys.argv)
     GUI = Window()
