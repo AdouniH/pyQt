@@ -37,9 +37,37 @@ class Window(QtGui.QMainWindow):
         #chekbox.toggle()  #chekbox is on from the beginning
         chekbox.stateChanged.connect(self.enlarge_window)
 
+        self.progress = QtGui.QProgressBar(self)
+        self.progress.setGeometry(200,80,250,20)
+        self.btn1=QtGui.QPushButton("download",self)
+        self.btn1.move(200,120)
+        self.btn1.clicked.connect(self.download)
 
+        #print(self.style().objectName())
+        self.styleChoice = QtGui.QLabel("hi",self)
+
+        comboBox = QtGui.QComboBox(self)
+        comboBox.addItem("THINGY1")
+        comboBox.addItem("THINGY2")
+        comboBox.addItem("THINGY3")
+        comboBox.addItem("THINGY4")
+        comboBox.addItem("THINGY5")
+        comboBox.addItem("THINGY6")
+
+        comboBox.move(50,250)
+        self.styleChoice.move(0,150)
+        #print(self.styleChoice)
+        comboBox.activated[str].connect(self.style_choice)
         self.show()
 
+    def style_choice(self,texto):
+        self.styleChoice.setText(texto)
+        QtGui.QApplication.setStyle(QtGui.QStyleFactory.create(texto))
+    def download(self):
+        self.completed=0
+        while self.completed<100:
+            self.completed +=0.0001
+            self.progress.setValue(self.completed)
     def enlarge_window(self,state):
         if state==QtCore.Qt.Checked:
             self.setGeometry(50,50,1000,600)
