@@ -25,7 +25,9 @@ class Window(QtGui.QMainWindow):
         btn.clicked.connect(self.close_application)
         btn.resize(btn.sizeHint())
         btn.move(0,100)
-
+        """
+        here is the thingy
+        """
         # thingy one
         extractAction = QtGui.QAction(QtGui.QIcon('ENSG.png'), 'hello1', self)
         extractAction.triggered.connect(self.close_application)
@@ -47,7 +49,9 @@ class Window(QtGui.QMainWindow):
         self.toolBar = self.addToolBar("extraction2")
         self.toolBar.addAction(extractAction)
 
-
+        """
+         end of the thingy
+        """
 
         self.show()
 
