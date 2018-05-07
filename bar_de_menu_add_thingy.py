@@ -8,15 +8,24 @@ class Window(QtGui.QMainWindow):
         self.setWindowTitle("Houssem ADOUNI")
         self.setWindowIcon(QtGui.QIcon('ENSG.png'))
 
-
+        """"
+        ADD Thingy to menu bar
+        """"
         extractAction = QtGui.QAction("&do something", self)
         extractAction.setShortcut("CTRL+Q")
         extractAction.setStatusTip('Leave the app')
         extractAction.triggered.connect(self.close_application)
+
+
         self.statusBar()
         mainMenu = self.menuBar()
         fileMenu = mainMenu.addMenu('&File')
         fileMenu.addAction(extractAction)
+
+        """
+        finish of the thingy
+        """
+
 
         self.home()
 
