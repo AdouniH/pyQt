@@ -11,10 +11,14 @@ class Window(QtGui.QMainWindow):
 
     def home(self):
         btn=QtGui.QPushButton("Quit",self)
-        btn.clicked.connect(QtCore.QCoreApplication.instance().quit)
-        btn.resize(100,100)
-        btn.move(100,100)
+        btn.clicked.connect(self.close_application)
+        btn.resize(btn.sizeHint())
+        btn.move(0,0)
         self.show()
+
+    def close_application(self):
+        print "custom thingy"
+        sys.exit()
 
 def run():
     app = QtGui.QApplication(sys.argv)
