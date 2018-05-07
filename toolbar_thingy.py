@@ -26,10 +26,25 @@ class Window(QtGui.QMainWindow):
         btn.resize(btn.sizeHint())
         btn.move(0,100)
 
-        extractAction = QtGui.QAction(QtGui.QIcon('ENSG.png'), 'hello', self)
+        # thingy one
+        extractAction = QtGui.QAction(QtGui.QIcon('ENSG.png'), 'hello1', self)
         extractAction.triggered.connect(self.close_application)
 
+        #thingy two
+        extractAction1 = QtGui.QAction(QtGui.QIcon('ENSG.png'), 'hello2', self)
+        extractAction.triggered.connect(self.close_application)
+
+        #thingy three
+        extractAction2 = QtGui.QAction(QtGui.QIcon('ENSG.png'), 'hello3', self)
+        extractAction.triggered.connect(self.close_application)
+
+        #add toolbar and put the thingies on it
         self.toolBar = self.addToolBar("extraction")
+        self.toolBar.addAction(extractAction)
+        self.toolBar.addAction(extractAction1)
+
+        #ajout d'un autre toolbar
+        self.toolBar = self.addToolBar("extraction2")
         self.toolBar.addAction(extractAction)
 
 
